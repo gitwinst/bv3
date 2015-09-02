@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   /*  color: #515151;*/
-  /*  -webkit-font-smoothing: antialiased;*/
 }
 
 *::-moz-selection {
@@ -40,6 +39,8 @@
   font-family: 'Source Sans Pro', sans-serif;
   color: #222222;
   font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -108,7 +109,8 @@ header {
   letter-spacing: 0.05em;
   font-size: 24px;
   text-align: center;
-  /*  -webkit-font-smoothing: antialiased;*/
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
 }
 
 .name h1 {
@@ -197,7 +199,8 @@ h3 {
   text-align: center;
   font-family: 'moon_flowerregular', sans-serif;
   padding-bottom: 20px;
-  /*  -webkit-font-smoothing: antialiased;*/
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
 }
 
 h2 .dark {
