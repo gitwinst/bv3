@@ -1,0 +1,795 @@
+/* Designed & built by Winston */
+
+
+/* Organizational design question - do I organize these sheet by viewport, eg under 600px over xx, or by ui cog, eg banner, main, hr? */
+
+* {
+  /* Hack, fix */
+  margin: 0;
+  padding: 0;
+  /*  color: #515151;*/
+  /*  -webkit-font-smoothing: antialiased;*/
+}
+
+*::-moz-selection {
+  /*  color: #ffffff;*/
+  /*  background: #B25853;*/
+}
+
+*::selection {
+  /*  color: #ffffff;*/
+    /*background: #B25853;*/
+}
+
+
+/* Basic styles, under 750px */
+
+.all {
+  /*display: -webkit-flex;*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-flex-direction: column;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #222222;
+  font-size: 17px;
+}
+
+@font-face {
+    font-family: 'moon_flowerregular';
+    src: url('fonts/moon_flower-webfont.eot');
+    src: url('fonts/moon_flower-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/moon_flower-webfont.woff') format('woff'),
+         url('fonts/moon_flower-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bam {
+  /*font-family: "Moon Flower Bold";*/
+  font-family :'moon_flowerregular';
+  font-weight: 700;
+}
+
+body {
+  /* Controls color above/below page, seen only on overscroll */
+  background-color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.banner {
+  background-color: #333333;
+  /*height: 300px;*/
+  /*  -webkit-font-smoothing: antialiased;*/
+  color: #B0B0B0;
+}
+
+.banner-text {
+  /*display: -webkit-flex;*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-flex-direction: column;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+header {
+  padding-top: 20px;
+}
+
+.profile-image {
+  background-image: url("img/b1.jpg");
+  width: 175px;
+  height: 175px;
+  background-size: 100% 100%;
+  margin: auto;
+  box-shadow: 0 0 5px #FDFBF4;
+  border-radius: 50%;
+}
+
+.name {
+  font-family: 'moon_flowerregular', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 24px;
+  text-align: center;
+  /*  -webkit-font-smoothing: antialiased;*/
+}
+
+.name h1 {
+  margin: 0.4em 0;
+}
+
+nav {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+hr {
+  border: none;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  /* 200px, as per height of .banner */
+  /*top: 300px;*/
+  background-color: #c0c8c9;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  background-image: -moz-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Mobile .main */
+
+.main {
+  background-color: #FFFDF2;
+  /*  padding-top: 20px;*/
+  line-height: 1.8em;
+}
+
+.container {
+  /*display: webkit-flex;*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-flex-direction: column;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 60px 15px;
+  text-align: center;
+  background-color: #FDFDFD;
+  padding: 30px 10px;
+  /*  -webkit-box-shadow: 1px 2px 1px 0px rgba(0,0,0,0.75);*/
+  /*  -moz-box-shadow: 1px 2px 1px 0px rgba(0,0,0,0.75);*/
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  max-width: 1300px;
+}
+
+.profile,
+.skills,
+.experience,
+.education,
+.publications,
+.patents,
+.contact {
+  /*max-width: 1400px;*/
+
+}
+
+.profile {
+  margin-top: 45px;
+}
+
+.profile h2 {
+  color: #333333;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  font-size: 36px;
+  text-align: center;
+  font-family: 'moon_flowerregular', sans-serif;
+  padding-bottom: 20px;
+  /*  -webkit-font-smoothing: antialiased;*/
+}
+
+h2 .dark {
+  color: #2D2D2D;
+}
+
+h2 .darker {
+  color: #282828;
+}
+
+h2 .darkest {
+  color: #222222;
+}
+
+.skills-list,
+.skills h3 {
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.work {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.multispan-work {
+  margin-top: 0;
+}
+
+.china-work {
+  margin-bottom: 0;
+}
+
+.work ul {
+  margin-top: 10px;
+}
+
+.work li {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  list-style-type: circle;
+}
+
+.work h4 {
+  font-variant: small-caps;
+  /*font-family: 'Moon Flower', sans-serif;*/
+}
+
+.work h5 {
+  font-size: 16px;
+  display: inline;
+  border-bottom: 1px solid #5d5d5d;
+}
+
+.publications,
+.patents {
+  text-align: left;
+}
+
+.publications > ul {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.publications li {
+  margin-bottom: 10px;
+}
+
+.publications li:last-child {
+  margin-bottom: 0;
+}
+
+h3 {
+  font-weight: 100;
+}
+
+h4,
+h5 {
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+.contact {
+  margin-bottom: 45px;
+}
+
+.image-container {
+  float: right;
+  padding-left: 10px;
+}
+
+.work-images {
+  min-width: 125px;
+  height: 125px;
+  background-position: center;
+  background-size: cover;
+  -webkit-shape-outside: circle();
+  shape-outside: circle();
+  box-shadow: 0 0 5px #333333;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+figcaption {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  color: #555555;
+  font-size: 12px;
+}
+
+figcaption {
+  display: none;
+}
+
+
+
+
+.multispan-image {
+  background-image: url("img/hayward.jpg");
+  background-position: top;
+}
+
+.gg-image {
+  background-image: url("img/gg.jpg");
+}
+
+.SCU-image {
+  background-image: url("img/santaclarauni.jpg");
+}
+
+.shanghai-image {
+  background-image: url("img/shanghai.jpg");
+}
+
+/*.SCU-logo-small {
+  background-image: url("img/SCU-logo.png");
+  width: 100px;
+  height: 100px;
+  background-size: 100% 100%;
+  margin: auto;
+  margin-top: 15px;
+}*/
+
+.SCU-logo {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 100px;
+  max-height: 100%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+fieldset {
+  /*text-align: left;*/
+  border: none;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#name,
+#email,
+#message {
+  background-color: #FDFDFD;
+  width: 100%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+}
+
+#name:valid,
+#email:valid {
+  border-bottom: 1px solid #3DC807;
+}
+
+#message:focus {
+  background-color: #FDFDFD;
+  border: 1px solid #1374FF; 
+}
+
+#name,
+#email {
+  border: none;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#message {
+  background-color: #EEEEEE;
+  border-color: #EEEEEE;;
+  border-radius: 2px;
+  height: 200px;
+}
+
+#name:focus,
+#email:focus,
+#message:focus {
+  outline: none;
+  box-shadow-bottom: 0 0 5px #1374FF;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border-bottom: 1px solid #1374FF;
+}
+
+#submit {
+  border: none;
+  background-color: rgba(253, 253, 253, 0);
+  color: #1B942F;
+  font-size: 24px;
+  /*border-bottom: 0;*/
+  border: 2px solid #1B942F;
+  padding: 15px 30px;
+  border-radius: 4px;
+  /*margin-top: 20px;*/
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+#submit:hover {
+  /*background-color: #65D077;*/
+  /*border: 1px solid #3DC807;*/
+  color: #FDFDFD;
+}
+
+#submit:disabled {
+  /*color: pink;*/
+}
+
+/* submit button pressed, different visual state */
+
+#submit:active {
+  /*box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);*/
+}
+
+/*input:valid,
+textarea:valid {
+  border: 1px solid green;
+}*/
+
+
+/* Hover.css */
+/* Sweep To Top */
+.hvr-sweep-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1B942F;
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+      transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.94,.06,.32,.95);
+  transition-timing-function: cubic-bezier(0.94,.06,.32,.95);
+  border-radius: 4px;
+}
+.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+  color: white;
+}
+.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+      transform: scaleY(1);
+}
+
+
+
+a.nav-active {
+  background-color: white;
+  color:#ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Devices above 850px wide */
+
+@media screen and (min-width: 850px) {
+  .all {
+    font-size: 18px;
+  }
+
+  body {
+    /* Controls color above/below page, seen only on overscroll */
+    /*background-color: #FDFBF4;*/
+  }
+
+  /* All things .banner */
+  .banner {
+    width: 18em;
+    height: 100%;
+    position: fixed;
+  }
+  .name {
+    font-size: 30px;
+    text-align: center;
+    color: #1374FF;
+  }
+  .heading-color-splash {
+    color: #FA4A15;
+  }
+
+  .bam {
+    /*font-family: "Moon Flower Bold";*/
+  }
+
+  nav {
+    width: 250px;
+    display: initial;
+    text-align: left;
+    margin: auto;
+  }
+
+
+
+
+  .nav-active {
+    background-color; #ffffff;
+  }
+
+
+
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  footer {
+    width: 250px;
+    margin: auto;
+    display: initial;
+    /* Pretty hacky, fix */
+    font-size: 10px;
+    position: fixed;
+    bottom: 1px;
+    left: 38px;
+  }
+
+  /* All things .main */
+  .main {
+    margin: auto;
+    padding-top: 0;
+    /* This value matches the width of .banner, see above */
+    margin-left: 18em;
+    /* I discovered a hack! I wanted to limit the max-width of the site so it doesn't look crazy on widescreens. To do so I set max-width
+       of .container to 1300px. This did the job, but with one drawback - after it hit max-width, the browser would render anything
+       past that point (off to the right) in the dark grey color used in the banner. (This is because that color is set as the 
+       background-color on body{}, for aesthetic effect in browsers that rubberband/overscroll.) Setting margin-right:0, however, fills
+       the right side of the screen with the color of .container, regardless of width of browser. */
+    margin-right: 0;
+  }
+
+  .container {
+    margin: 120px 50px;
+    padding: 50px 20px;
+  }
+
+  .profile {
+    margin-top: 75px;
+  }
+
+  .profile h2 {
+    font-size: 40px;
+    line-height: 1.4em;
+  }
+
+  .work ul {
+    /*  display: inline;*/
+  }
+
+  .work-images {
+    min-width: 125px;
+    height: 125px;
+  }
+
+  figcaption {
+    display: block;
+  }
+
+  .skills {
+    text-align: center;
+    -webkit-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .education {
+    text-align: center;
+  }
+
+  .skills,
+  .education {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .skills > h3,
+  .education > h3 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+
+  .skills-list,
+  .degree {
+    margin: auto;
+  }
+
+  .contact {
+    margin-bottom: 75px;
+  }
+
+  .education {
+  }
+
+  .SCU-logo-small {
+    display: none;
+  }
+
+  .SCU-logo {
+    max-width: 100%;
+    height: 100px;
+  }
+
+  .one {
+    color: #FA4A15;
+  }
+
+  .two {
+    color: #1374FF;
+  }
+
+  /**/
+  /**/
+  /* Glowstick, clean up, give credit to animate.css guy for showing how it's done */
+  /**/
+  /**/
+
+  hr {
+    border: none;
+    height: 100%;
+    position: absolute;
+    right: -6px;
+    top: 0;
+    width: 6px;
+    background-color: #c0c8c9;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    background-image: -moz-linear-gradient(92deg, #f35626, #feab3a);
+    /* -webkit-text-fill-color: transparent; */
+    -webkit-animation: hue 10s infinite linear;
+    -moz-animation: hue 10s infinite linear;
+  }
+
+  /* Hide footer on short browsers so footer and nav don't collide */
+  @media (max-height: 600px) {
+    footer {
+      display: none;
+    }
+  }
+  @-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .work-images {
+    min-width: 225px;
+    height: 225px;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .work-images {
+    min-width: 275px;
+    height: 275px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .SCU-logo {
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+        -ms-flex-order: 0;
+            order: 0;
+    width: auto;
+    max-width: 100%;
+    height: 125px;
+  }
+
+  .education {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .SCU-logo {
+    max-width: 100%;
+    height: 175px;
+  }
+}
+
+
+
+
+/* Possible breakpoint at 1100px, perhaps only decreasing size of SCU logo and images */
+/* If in mobile view, .bam rule should simply set font-weight to 700. Maybe load Moon Flower Bold font only if browser width is 
+   greater than 750px? How do I do that in CSS? Currently all fonts are loading
+   in HTML. */
